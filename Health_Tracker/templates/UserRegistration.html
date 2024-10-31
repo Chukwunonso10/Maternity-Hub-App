@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% block title %}USer Registration page{% endblock title %}
+
+{% block h1 %}welcome to Our Registration page{% endblock h1 %}
+
+{% block main%}
+<main>
+    <form class="forms" action="{% url 'submit_checkup' %}" method="post">
+        {% csrf_token %}
+       
+        <P>
+            <label for="name">FirstName</label>
+            <input type="text" id="name" name="name" autofocus autocomplete="on" required placeholder="Enter your Firstname here" >
+        
+        </P>
+        <P>
+            <label for="Lname">LastName</label>
+            <input type="text" id="Lname" name="Lname"  autocomplete="on" required placeholder="Enter your LastName here" >
+        
+        </P>
+        <P>
+            <label for="username">UserName</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username here" >
+        
+        </P>
+        <P>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email"  autocomplete="on" placeholder="Enter your email here" >
+        
+        </P>
+        <P>
+            <label for="phoneNo">PhoneNumber</label>
+            <input type="tel" id="phoneNo" name="phoneNo"  >
+        
+        </P>
+        <P>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" >
+        
+        </P>
+        <P>
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" id="confirm_password" name="confirm_password" >
+        
+        </P>
+        
+        <button type="submit">Submit</button>
+        <button type="reset" class="reset">Reset</button>
+
+    </form>
+</main>
+    </main>
+{% endblock main%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="chukwnnonso Kuzue"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="30">
+    <meta http-equiv="x-uA-compatible" content="IE-edge">
+    <title>Marternity Homepage</title>
+    <link rel="stylesheet" href="{% static 'Health_Tracker/css/styles.css' %}">
+</head>
+<body>
+    <header class="container">
+        <h1 class="welcome">welcome to  {{name}}  and {{class}} Marternity Hub Registration portal</h1>
+
+            <nav>
+                <a href="#"><a href="Analysis"></a>
+                <a href="#"><a href="CheckUp"></a>
+                <a href="#"><a href="Login Page"></a>
+                <a href="#"><a href="Symptoms"></a>
+            </nav>
+    </header>
+    <main>
+        <form action="#" method="post">
+           
+            <P>
+                <label for="name">FirstName</label>
+                <input type="text" id="fName" name="fNAMe" autofocus autocomplete="on" placeholder="Enter your Firstname here" >
+            
+            </P>
+            <P>
+                <label for="Lname">LastName</label>
+                <input type="text" id="LName" name="LNAMe"  autocomplete="on" placeholder="Enter your LastName here" >
+            
+            </P>
+            <P>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email"  autocomplete="on" placeholder="Enter your email here" >
+            
+            </P>
+            <P>
+                <label for="phoneNo">PhoneNumber</label>
+                <input type="tel" id="phoneNo" name="phoneNo" autocomplete="on" >
+            
+            </P>
+            <P>
+                <label for="Password">Password</label>
+                <input type="password" id="password" name="password" >
+            
+            </P>
+            <P>
+                <label for="Retype password">Retype Password</label>
+                <input type="password" id="Retype password" name="Retype password" >
+            
+            </P>
+            
+            <button type="submit">Submit</button>
+            <button type="reset" class="reset">Reset</button>
+
+        </form>
+    </main>
+    <footer><p class="fff">&copy; copyright 2024 | Chukwunonso powered by 3MTT </p>
+    <p><a href="#">BACK TO TOP</a></p>   
+    </footer>
+</body>
+</html> -->

@@ -1,0 +1,27 @@
+<!-- Health_Tracker/templates/Health_Tracker/login.html -->
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock title %}
+
+{% block h1 %}welcome to Login page {% endblock h1 %}
+
+{% block main%}
+<main>
+<h2>Login</h2>
+<form class="forms" action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" autocomplete="on" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" autocomplete="on" required>
+    <br>
+    <button type="submit">Login</button>
+</form>
+{% endblock main%}
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-warning">{{ message }}</div>
+    {% endfor %}
+{% endif %}

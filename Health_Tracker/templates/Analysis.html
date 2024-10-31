@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Symptoms Analysis page{% endblock title %}
+
+{% block h1 %}welcome to Maternity App inherited{% endblock h1 %}
+
+{% block main%}
+        <h2>Symptoms Analysis</h2>
+        <div>
+
+            <p>Analysis Result Goes Here</p>
+            <h3><strong> your Symptoms:</strong></h3>
+            <p>{{symptom.symptoms}} </p>
+            <p><strong>Severity:</strong> {{ symptom.symptoms_severity }}</p>
+
+             <!-- Display the AI-generated recommendations -->
+            <h3>AI Health Recommendations</h3>
+            {% if analysis_result.results %}
+            <p>{{ analysis_result.results }}</p>
+            {% else %}
+            <p>No recommendations available at the moment.</p>
+            {% endif %}
+            <a href="{% url 'symptoms' %}">Record another symptom</a>
+        </div>
+{% endblock main%}

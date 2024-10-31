@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Dashboard{% endblock title %}
+
+{% block h1 %}Health Dashboard{% endblock h1 %}
+
+{% block main %}
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="{% url 'dashboard' %}">HealthAI</a>
+        <div>
+            <ul>
+                <li><a href="#">{{ user.username }}</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Welcome Section -->
+    <div>
+        <h1>Welcome, {{ user.username }}!</h1>
+        <p>Your health insights at your fingertips.</p>
+    </div>
+
+    <!-- Notifications -->
+    {% if messages %}
+        <div>
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <!-- Add Symptoms Button -->
+    <div>
+        <a href="{% url 'add_symptom' %}">Add Symptoms</a>
+    </div>
+
+    <!-- User Symptoms -->
+    <section>
+        <h2>Your Symptoms</h2>
+        <ul>
+            {% for symptom in user_symptoms %}
+                <li>{{ symptom.date_logged }}: {{ symptom.symptoms }}</li>
+            {% empty %}
+                <li>No symptoms logged yet.</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <!-- Recent Health Recommendations -->
+    <section>
+        <h2>Recent Health Recommendations</h2>
+        <ul>
+            {% for analysis in recent_analysis %}
+                <li>{{ analysis.created_at }}: {{ analysis.results }}</li>
+            {% empty %}
+                <li>No recommendations available.</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <!-- Estimated Due Date (EDD) -->
+    <section>
+        <h3>Estimated Due Date (EDD)</h3>
+        {% if edd %}
+            <p>Your estimated due date is: {{ edd }}</p>
+        {% else %}
+            <p>Please update your Last Menstrual Period (LMP) for EDD calculation.</p>
+        {% endif %}
+    </section>
+
+    <!-- Recent Analysis Section -->
+    <div>
+        <h3>Recent Analysis</h3>
+        <hr>
+        {% if recent_symptoms %}
+            <ul>
+                {% for symptom in recent_symptoms %}
+                    <li>
+                        <h5>{{ symptom.date_logged }} - {{ symptom.symptoms }}</h5>
+                        <p><strong>AI Recommendation:</strong> {{ symptom.analysisresults.results }}</p>
+                        <small>Analyzed on {{ symptom.analysisresults.created_at }}</small>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No recent activity available.</p>
+        {% endif %}
+    </div>
+    
+    <!-- Notifications Section -->
+    <section>
+        <h3>Notifications</h3>
+        {% if user_notifications %}
+            <ul>
+                {% for notification in user_notifications %}
+                    <li>{{ notification.message }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No new notifications.</p>
+        {% endif %}
+        <a href="{% url 'notifications' %}">View All Notifications</a>
+        
+    </section>
+    <section class="team-member"><img src="{% static 'images/maternal_health_dashboard_black.jpeg' %}" alt="chukwunonso" height="350" width="1080"></>
+</body>
+{% endblock main %}
+

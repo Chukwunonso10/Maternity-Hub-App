@@ -1,0 +1,12 @@
+
+{% block main%}
+    <h2>Form submitted successfully!</h2>
+    <p>You will be redirected to the login page shortly....</p>
+
+    <!-- JavaScript to redirect after 3 seconds -->
+    <script>
+        setTimeout(function() {
+            window.location.href = "{% url 'login' %}";
+        }, 3000);  // Redirect after 3000 ms (3 seconds)
+    </script>
+    {% endblock main %}

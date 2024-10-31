@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% block title %}Symptoms Page{% endblock title %}
+
+{% block h1 %}welcome to Log Symptoms{% endblock h1 %}
+
+{% block main%}
+<main class="forms">
+    <form action="{% url 'symptoms' %}" method="post">
+        {% csrf_token %}
+        <fieldset>
+        <legend>Log your Symptoms here</legend>
+        <P>
+            <label for="symptoms">Symptoms</label><br>
+            <textarea name="symptoms" id="symptoms" rows="15" cols="40" autocomplete="on" autofocus required></textarea>
+        
+        </P>
+        <p>
+            <label for="severity">Severity level (1 - 10)</label>
+            <input type="number" name="severity" autocomplete="on" id="severity" min="1" max="10" required >
+        </p>
+       
+        </fieldset>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+
+    </form>
+</main>
+{% endblock main%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="chukwnnonso Kuzue"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="30">
+    <meta http-equiv="x-uA-compatible" content="IE-edge">
+    <title>Marternity Homepage</title>
+    <link rel="stylesheet" href="{% static 'Health_Tracker/css/styles.css' %}">
+</head>
+<body>A
+    <header>
+        <h1>log Symptoms</h1>
+        <nav>
+            <a href="#"><a href="Analysis"></a>
+            <a href="#"><a href="CheckUp"></a>
+            <a href="#"><a href="Login Page"></a>
+            <a href="#"><a href="Symptoms"></a>
+        </nav>
+    </header>
+    <main>
+        <form action="#" method="post">
+            <fieldset>
+            <legend>Log your Symptoms here</legend>
+            <P>
+                <label for="symptoms">Symptoms</label><br>
+                <textarea name="symptoms" id="symptoms" rows="15" cols="40" autofocus></textarea>
+            
+            </P>
+            <p>
+                <label for="severity">Severity level (1 - 10)</label>
+                <input type="number" min="1" max="10"    required >
+            </p>
+           
+            </fieldset>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+
+        </form>
+    </main>
+    <footer><p class="fff">&copy; copyright 2024 | Chukwunonso powered by 3MTT </p>
+        <p><a href="#">BACK TO TOP</a></p>   
+        </footer>
+</body>
+</html> -->

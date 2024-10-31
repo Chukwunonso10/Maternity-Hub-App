@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% block title %}CheckUp page{% endblock title %}
+
+{% block h1 %}welcome to checkup portal{% endblock h1 %}
+
+{% block main%}
+<main>
+    <form action="{% url 'submit_checkup' %}" method="post">
+        {% csrf_token %}
+        <fieldset>
+        <legend><h2>Daily CheckUp</h2></legend>
+        <P>
+            <label for="check_up">CheckUp Data</label>
+            <input type="text" id="checkup" name="Check_up" autofocus autocomplete="on" placeholder="Enter your checkup data" >
+        
+        </P>
+        <P>
+            <label for="suggestions">Suggestions</label>
+            <textarea name="suggestions" id="suggestions" row="15" cols="40" placeholder="suggestions goes here" autocomplete="on"></textarea>
+        
+        </P>
+        <P>
+            <label for="notes">Notes</label>
+            <textarea name="notes" id="notes" row="",20 cols="40" placeholder="notes goes here"></textarea>
+        </fieldset>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+
+    </form>
+</main>
+{% endblock main%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="chukwunonso Kuzue"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="30">
+    <meta http-equiv="x-uA-compatible" content="IE-edge">
+    <title>Marternity Homepage</title>
+    <link rel="stylesheet" href="{% static 'Health_Tracker/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>welcome to CheckUp portal</h1>
+        <header>
+
+            <nav>
+                <a href="#"><a href="Analysis"></a>
+                <a href="#"><a href="CheckUp"></a>
+                <a href="#"><a href="Login Page"></a>
+                <a href="#"><a href="Symptoms"></a>
+            </nav>
+
+    </header>
+    <main>
+        <form action="#" method="post">
+            <fieldset>
+            <legend>Daily CheckUp</legend>
+            <P>
+                <label for="checkup">CheckUp Data</label>
+                <input type="text" id="checkup" name="CheckUp" autofocus autocomplete="on" placeholder="Enter your checkup data" >
+            
+            </P>
+            <P>
+                <label for="suggestions">Suggestions</label>
+                <textarea name="suggestions" id="suggestions" row="15" cols="40" placeholder="suggestions goes here"></textarea>
+            
+            </P>
+            <P>
+                <label for="notes">Notes</label>
+                <textarea name="notes" id="notes" row="",20 cols="40" placeholder="notes goes here"></textarea>
+            </fieldset>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+
+        </form>
+    </main>
+</body>
+</html> -->

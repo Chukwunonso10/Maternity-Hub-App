@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About us page{% endblock title %}
+
+{% block h1 %}Meet The Dedicated Team for the Project {% endblock h1 %}
+
+{% block main%}
+
+<section>
+    <h2>About US</h2>
+    <h3>Welcome to Maternity Health App</h3>
+    <p>
+        At Maternity Health Hub At Maternity Health App, we understand that pregnancy is one of the most transformative journeys in a woman's life. Our mission is to empower expectant mothers with personalized, data-driven recommendations that promote a healthier, more informed pregnancy experience. With the integration of artificial intelligence, we provide tailored advice and support to help you navigate every stage of your pregnancy.
+    </p>
+
+
+    <h3>Our Story</h3>
+    <p>Founded in Oct, 2024, Maternity Health App emerged from a deep understanding of the unique challenges faced by pregnant mothers. Our team comprises Data Analysts, data scientists, and tech enthusiasts who are dedicated to creating a platform that prioritizes maternal health. We believe that every mother deserves access to reliable information and guidance during this critical time.</p>
+        
+    Our app combines cutting-edge AI technology with expert insights to deliver personalized recommendations for nutrition, exercise, wellness, and more. By analyzing your health data and preferences, we aim to provide you with actionable advice tailored to your individual needs.
+        
+    <p><h3>Our Values</h3></p>
+    Empowerment: We believe in equipping mothers with the knowledge and tools they need to make informed decisions about their health and well-being.
+    Personalization: Our AI-driven approach ensures that every recommendation is customized to meet the unique needs of each user.
+    Community Support: We foster a supportive environment where mothers can connect, share experiences, and access valuable resources.</p>
+
+    <h3>Join Our Community</h3>
+    At Maternity Health App, you are not alone. Join a community of mothers who are sharing their journeys, insights, and tips. Together, we can celebrate the joys and challenges of
+    pregnancy while supporting one another every step of the way. 
+</section>
+
+<section>
+    <p><h2>Meet The Dedicated Team for the Maternal Health Project</h2></p>
+    <div class="team-member"><img src="{% static 'images/nony_chibday.jpeg' %}" alt="chukwunonso" height="250" width="200">
+        <h3>Software Developer</h3>
+        <p><strong>Chukwunonso Kuzue is a software developer with a foundation in civil engineering, bringing an analytical mindset to coding and problem-solving. Currently advancing through the 3MTT program, where we focuse on building impactful solutions in tech. Recently honored with the August Knowledge Showcase Laptop award, Chukwunonso is passionate about harnessing technology to create innovative, user-centered applications and is committed to continual learning and growth in the field of software development</strong></p>
+        <a href="https://www.linkedin.com/in/kuzue-chukwunonso-0b3170165/" class="learn-more">Learn More</a>
+    </div>
+</section>
+
+<section>
+    <div class="team-member"><img src="{% static 'images/sandra.jpeg' %}" alt="chukwunonso" height="250" width="200">
+        <h3>Data Analytics</h3>
+        <p>My name is Sandra Nzekwe, and I’m a data analyst and visualization specialist with a strong focus on healthcare analytics. Currently, I’m working on the Maternal Care Hub project, where I leverage tools like Power BI, Python, and Tableau to create data-driven insights that enhance maternal and child health outcomes. My background in veterinary science gives me a unique perspective in transforming complex data into actionable visuals. Driven by a passion for impactful solutions, I’m dedicated to advancing my skills and making a real difference through data.</p>
+        <ul>
+            <li><strong> Data Analytics</strong></li>
+        </ul>
+        <a href="https://www.linkedin.com/in/sandra-nzekwe-37416a239" class="learn-more">Learn More</a>
+    </div>
+</section>
+        
+</ul>
+<section id="features">
+    <h2>Explore Our Features</h2>
+    <ul>
+        <li><strong>AI-Driven Insights:</strong> <a href="#">Receive personalized advice on nutrition, exercise, and wellness.</a></li>
+        <li><strong>Track Your Progress:</strong> <a href="#"> Monitor your health and milestones throughout your pregnancy.</a></li>
+        <li><strong>Access Resources:</strong> <a href="#"> Find articles, tips, and support tailored to your pregnancy journey.</a></li>
+        <div class="team-member"><img src="{% static 'images/maternal_health_dashboard_black.jpeg' %}" alt="chukwunonso" height="350" width="1000">
+    </ul>
+</section>
+    
+    
+<section id="newsletter">
+    <h2>Newsletter</h2>
+    <p>Stay Informed! Sign up for exclusive updates, expert tips, and early access to new features designed to enhance your maternity experience.</p>
+    <input type="email" placeholder="Your email" required>
+    <button type="submit">Subscribe to Our Newsletter</button>
+{% endblock main %}

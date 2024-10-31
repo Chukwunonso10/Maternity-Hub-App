@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="chukwnnonso Kuzue"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="30">
+    <meta http-equiv="x-uA-compatible" content="IE-edge">
+    <title>{% block maternity %} {% endblock maternity %}</title>
+    <link rel="stylesheet" href="{% static 'Health_Tracker/css/styles.css' %}">
+</head>
+<body>
+    <header class="container">
+        <h1 class="welcome">{% block h1 %} {% endblock h1 %}</h1>
+            <nav>
+                <a href="{% url 'dashboard' %}">Dashboard</a>
+                <a href="{% url 'UserRegistration' %}">Registration Page</a>
+                <a href="{% url 'Analysis' symptom_id=1 %}">Analysis</a>
+                <a href="{% url 'CheckUp' %}">CheckUp</a>
+                <a href="{% url 'symptoms' %}">Symptoms</a>
+                <a href="{% url 'about_us' %}">My Team</a>
+                
+            </nav>
+    </header>
+    {% block main%}
+
+    {% endblock main%}
+
+    <footer><p class="fff">&copy; copyright 2024 | Marternity Health App | powered by 3MTT| <a href="#">support</a>|<a href="#">Terms of Services</a></p>
+    <div><a href="#">BACK TO TOP</a><a href="{% url 'logout' %}">Sign out</a></div>   
+    </footer>
+</body>
+</html>
