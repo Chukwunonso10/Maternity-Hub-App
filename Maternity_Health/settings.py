@@ -32,9 +32,10 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool('DEBUG', default=True)
+DEBUG = env.bool('DEBUG', default=False)
 
-ALLOWED_HOSTS = ['Maternity_Health.onrender.com', '127.0.0.1']
+#ALLOWED_HOSTS = ['Maternity_Health.onrender.com', '127.0.0.1']
+ALLOWED_HOSTS = ['.vercel.app', 'your-custom-domain.com', 'localhost']
 
 
 # Application definition
